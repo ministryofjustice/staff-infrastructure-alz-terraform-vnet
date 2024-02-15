@@ -25,7 +25,7 @@ output "vnet_address_space" {
 
 output "vnet_subnets_names" {
   description = "The names of subnets created inside the new vNet"
-  value = { for k, v in azurerm_subnet.subnet : k => v.name }
+  value       = { for k, v in azurerm_subnet.subnet : k => v.name }
 }
 
 output "vnet_subnets" {
