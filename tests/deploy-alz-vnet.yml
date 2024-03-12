@@ -60,9 +60,9 @@ stages:
             inputs:
               azureSubscription: scVLZ
               scriptType: pscore
-              scriptPath: "$(System.DefaultWorkingDirectory)/terraform/tests/module/invoke-pester.ps1"
+              scriptPath: "$(System.DefaultWorkingDirectory)/tests/alz-vnet/tests/alz-vnet-tests.ps1"
               arguments: "-Path $(System.DefaultWorkingDirectory)/terraform/tests/module/alz-vnet"
-              workingDirectory: $(System.DefaultWorkingDirectory)/terraform/tests/module/
+              workingDirectory: $(System.DefaultWorkingDirectory)/modules/alz-vnet/
 
           - task: PublishTestResults@2
             inputs:
