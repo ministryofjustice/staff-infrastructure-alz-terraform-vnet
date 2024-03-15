@@ -45,7 +45,7 @@ stages:
       backendAzureRmStorageAccountName: samojtfstate001
       backendAzureRmContainerName: tfstatepullrequest
       backendAzureRmKey: "alzvnet-test.terraform.tfstate"
-      workingDirectory: "$(System.DefaultWorkingDirectory)/tests/alz-vnet"
+      workingDirectory: "$(System.DefaultWorkingDirectory)/staff-infrastructure-alz-terraform-vnet/tests/alz-vnet/"
       yamlenv: "pr_exclusivelock"
       applyTfChanges: true
       terraformVersion: "1.5.7"
@@ -62,7 +62,7 @@ stages:
               scriptType: pscore
               scriptPath: "$(System.DefaultWorkingDirectory)/tests/alz-vnet/tests/alz-vnet-tests.ps1"
               arguments: "-Path $(System.DefaultWorkingDirectory)/terraform/tests/module/alz-vnet"
-              workingDirectory: $(System.DefaultWorkingDirectory)/modules/alz-vnet/
+              workingDirectory: $(System.DefaultWorkingDirectory)/staff-infrastructure-alz-terraform-vnet/modules/alz-vnet/
 
           - task: PublishTestResults@2
             inputs:
@@ -83,7 +83,7 @@ stages:
       backendAzureRmStorageAccountName: samojtfstate001
       backendAzureRmContainerName: tfstatepullrequest
       backendAzureRmKey: "alzvnet-test.terraform.tfstate"
-      workingDirectory: "$(System.DefaultWorkingDirectory)/tests/alz-vnet"
+      workingDirectory: "$(System.DefaultWorkingDirectory)/staff-infrastructure-alz-terraform-vnet/tests/alz-vnet/"
       yamlenv: $(destoryyamlenv) # "pr_exclusivelock" - find a way to pass both these yaml env
       applyTfChanges: true
       dependsOn: [test]
