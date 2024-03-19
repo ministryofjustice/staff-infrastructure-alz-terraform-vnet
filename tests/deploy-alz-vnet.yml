@@ -37,7 +37,7 @@ stages:
       deployFlag: true
       stageName: "deploy"
       spokeName: pr
-      environementName: "dev"
+      environmentName: "dev"
       tenant_id: 0bb413d7-160d-4839-868a-f3d46537f6af
       subscription_id: 4b068872-d9f3-41bc-9c34-ffac17cf96d6
       stageDisplayName: "Deploy Terraform"
@@ -76,7 +76,7 @@ stages:
       destroyFlag: true
       stageName: "destroy"
       spokeName: pr
-      environementName: "dev"
+      environmentName: "dev"
       tenant_id: 0bb413d7-160d-4839-868a-f3d46537f6af
       subscription_id: 4b068872-d9f3-41bc-9c34-ffac17cf96d6
       stageDisplayName: "Destroy Terraform"
