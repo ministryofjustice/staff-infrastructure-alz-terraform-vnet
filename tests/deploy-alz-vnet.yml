@@ -21,7 +21,7 @@ resources:
 variables:
   - group: "github"
   - name: applyOnPr # always apply because this is a PR (this var is checked in apply conditional inside deploy template)
-    value: true
+    value: false
   - name: destoryyamlenv
     ${{ if eq(variables['Build.Reason'],'PullRequest') }}:
       value: destroy_approval
