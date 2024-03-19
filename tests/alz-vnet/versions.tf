@@ -7,6 +7,12 @@ terraform {
       version = "3.96.0"
     }
   }
+  backend "azurerm" {
+    storage_account_name = "samojtfstate001"
+    resource_group_name  = "rg-terraform-statefiles-001"
+    container_name       = "tfstatepullrequest"
+    key                  = "alzvnet.terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
