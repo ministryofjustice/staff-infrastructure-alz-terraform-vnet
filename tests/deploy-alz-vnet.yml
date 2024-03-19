@@ -21,7 +21,7 @@ resources:
 variables:
   - group: "github"
   - name: applyOnPr # always apply because this is a PR (this var is checked in apply conditional inside deploy template)
-    value: true
+    value: false
   - name: destoryyamlenv
     ${{ if eq(variables['Build.Reason'],'PullRequest') }}:
       value: destroy_approval
@@ -34,6 +34,7 @@ pool:
 stages:
   - template: azdo/template-terraform-deploy-stage.yml@templates
     parameters:
+      githubPat: $(GITHUB_PAT)
       deployFlag: true
       stageName: "deploy"
       spokeName: pr
@@ -73,6 +74,7 @@ stages:
 
   - template: azdo/template-terraform-destroy-stage.yml@templates
     parameters:
+      githubPat: $(GITHUB_PAT)
       destroyFlag: true
       stageName: "destroy"
       spokeName: pr
