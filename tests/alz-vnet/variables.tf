@@ -55,13 +55,13 @@ variable "subnet" {
     },
     "testsubnet3" = {
       address_prefixes                          = ["172.16.1.32/28"]
-      private_endpoint_network_policies_enabled = true
+      private_endpoint_network_policies_enabled = false
       delegations                               = []
       service_endpoints                         = []
     },
     "GatewaySubnet" = {
       address_prefixes                          = ["192.168.1.64/26"]
-      private_endpoint_network_policies_enabled = true
+      private_endpoint_network_policies_enabled = false
       delegations                               = []
       service_endpoints                         = []
     },
