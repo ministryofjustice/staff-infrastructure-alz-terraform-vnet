@@ -41,3 +41,5 @@ module "vnet" {
   vnet_name           = "vnet-pr-alz-vnet-001"
   vnet_address_space  = var.vnet_address_space
 }
+
+# Note
