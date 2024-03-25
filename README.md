@@ -8,7 +8,6 @@ Note that the GatewaySubnet will always have the enforce_private_link_endpoint_n
 
 Quite possibly this should be extended to the bastion subnet.
 
-
 <!-- BEGIN_TF_DOCS -->
 
 ## Requirements
