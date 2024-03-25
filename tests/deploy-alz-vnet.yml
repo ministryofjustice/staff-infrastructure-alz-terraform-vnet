@@ -69,7 +69,7 @@ stages:
           - task: PublishTestResults@2
             inputs:
               testResultsFormat: "NUnit"
-              testResultsFiles: "$(System.DefaultWorkingDirectory)/terraform/tests/module/testResults.xml"
+              testResultsFiles: "$(System.DefaultWorkingDirectory)/terraform/tests/testResults.xml"
               failTaskOnFailedTests: false
 
   - template: azdo/template-terraform-destroy-stage.yml@templates
