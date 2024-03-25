@@ -8,7 +8,6 @@ Note that the GatewaySubnet will always have the enforce_private_link_endpoint_n
 
 Quite possibly this should be extended to the bastion subnet.
 
-At the time of writing we're still using terraform 0.13.3, which doesn't allow optional attributes in an object, I know there are potential work arounds but seems like an appropriate compromise for now
 
 <!-- BEGIN_TF_DOCS -->
 
