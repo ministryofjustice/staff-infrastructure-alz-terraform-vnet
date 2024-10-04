@@ -9,12 +9,12 @@ resource "azurerm_virtual_network" "vnet" {
 
 # Deploy hub subnets within virtual network
 resource "azurerm_subnet" "subnet" {
-  for_each                                  = var.subnet
-  name                                      = each.key
-  resource_group_name                       = var.resource_group_name
-  address_prefixes                          = each.value.address_prefixes
-  virtual_network_name                      = azurerm_virtual_network.vnet.name
-  service_endpoints                         = each.value.service_endpoints
+  for_each                          = var.subnet
+  name                              = each.key
+  resource_group_name               = var.resource_group_name
+  address_prefixes                  = each.value.address_prefixes
+  virtual_network_name              = azurerm_virtual_network.vnet.name
+  service_endpoints                 = each.value.service_endpoints
   private_endpoint_network_policies = each.key != "GatewaySubnet" ? each.value.private_endpoint_network_policies : true
   dynamic "delegation" {
     for_each = each.value.delegations

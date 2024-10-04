@@ -23,9 +23,9 @@ variable "subnet" {
   description = "This variable contains the subnet details"
 
   type = map(object({
-    address_prefixes                          = list(string)
+    address_prefixes                  = list(string)
     private_endpoint_network_policies = bool
-    service_endpoints                         = list(string)
+    service_endpoints                 = list(string)
     delegations = list(object({
       name = string
       service_delegation = list(object({
@@ -36,13 +36,13 @@ variable "subnet" {
 
   default = {
     "testsubnet1" = {
-      address_prefixes                          = ["192.168.1.0/28"]
+      address_prefixes                  = ["192.168.1.0/28"]
       private_endpoint_network_policies = false
-      service_endpoints                         = ["Microsoft.Storage", "Microsoft.KeyVault"]
-      delegations                               = []
+      service_endpoints                 = ["Microsoft.Storage", "Microsoft.KeyVault"]
+      delegations                       = []
     },
     "testsubnet2" = {
-      address_prefixes                          = ["172.16.1.0/28"]
+      address_prefixes                  = ["172.16.1.0/28"]
       private_endpoint_network_policies = false
       delegations = [{
         name = "delegation"
@@ -54,16 +54,16 @@ variable "subnet" {
       service_endpoints = []
     },
     "testsubnet3" = {
-      address_prefixes                          = ["172.16.1.32/28"]
+      address_prefixes                  = ["172.16.1.32/28"]
       private_endpoint_network_policies = false
-      delegations                               = []
-      service_endpoints                         = []
+      delegations                       = []
+      service_endpoints                 = []
     },
     "GatewaySubnet" = {
-      address_prefixes                          = ["192.168.1.64/26"]
+      address_prefixes                  = ["192.168.1.64/26"]
       private_endpoint_network_policies = false
-      delegations                               = []
-      service_endpoints                         = []
+      delegations                       = []
+      service_endpoints                 = []
     },
   }
 }
