@@ -24,7 +24,7 @@ variable "subnet" {
 
   type = map(object({
     address_prefixes                          = list(string)
-    private_endpoint_network_policies = bool
+    private_endpoint_network_policies = string
     service_endpoints                         = list(string)
     delegations = list(object({
       name = string
@@ -37,13 +37,13 @@ variable "subnet" {
   default = {
     "testsubnet1" = {
       address_prefixes                          = ["192.168.1.0/28"]
-      private_endpoint_network_policies = false
+      private_endpoint_network_policies = "Disabled"
       service_endpoints                         = ["Microsoft.Storage", "Microsoft.KeyVault"]
       delegations                               = []
     },
     "testsubnet2" = {
       address_prefixes                          = ["172.16.1.0/28"]
-      private_endpoint_network_policies = false
+      private_endpoint_network_policies = "Disabled"
       delegations = [{
         name = "delegation"
         service_delegation = [{
@@ -55,13 +55,13 @@ variable "subnet" {
     },
     "testsubnet3" = {
       address_prefixes                          = ["172.16.1.32/28"]
-      private_endpoint_network_policies = false
+      private_endpoint_network_policies = "Disabled"
       delegations                               = []
       service_endpoints                         = []
     },
     "GatewaySubnet" = {
       address_prefixes                          = ["192.168.1.64/26"]
-      private_endpoint_network_policies = false
+      private_endpoint_network_policies = "Disabled"
       delegations                               = []
       service_endpoints                         = []
     },

@@ -15,7 +15,7 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes                          = each.value.address_prefixes
   virtual_network_name                      = azurerm_virtual_network.vnet.name
   service_endpoints                         = each.value.service_endpoints
-  private_endpoint_network_policies = each.key != "GatewaySubnet" ? each.value.private_endpoint_network_policies : true
+  private_endpoint_network_policies = each.key != "GatewaySubnet" ? each.value.private_endpoint_network_policies : "Enabled"
   dynamic "delegation" {
     for_each = each.value.delegations
     content {
