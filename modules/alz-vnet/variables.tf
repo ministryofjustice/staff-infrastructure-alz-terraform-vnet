@@ -20,9 +20,9 @@ variable "vnet_address_space" {
 
 variable "subnet" {
   type = map(object({
-    address_prefixes                          = list(string)
-    private_endpoint_network_policies_enabled = bool
-    service_endpoints                         = list(string)
+    address_prefixes                  = list(string)
+    private_endpoint_network_policies = string
+    service_endpoints                 = list(string)
     delegations = list(object({
       name = string
       service_delegation = list(object({
@@ -39,13 +39,9 @@ variable "dns_servers" {
   default     = []
 }
 
-variable "private_endpoint_network_policies_enabled" {
-  type        = bool
-  default     = false
-  description = "This setting is needed to allow private endpoints. If the subnet will get a private endpoint this must be set to true"
+variable "private_endpoint_network_policies" {
+  type        = string
+  default     = "Disabled"
+  description = "This setting is needed to allow private endpoints. If the subnet will get a private endpoint this must be set to Enabled"
 }
 
-variable "tags" {
-  type        = map(any)
-  description = "A map of tags applied to the VNET."
-}
