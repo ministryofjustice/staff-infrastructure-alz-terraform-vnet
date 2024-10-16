@@ -34,11 +34,5 @@ resource "azurerm_subnet" "subnet" {
       }
     }
   }
-
-  lifecycle {
-    ignore_changes = [
-      tags,
-    ]
-  }
 }
 
