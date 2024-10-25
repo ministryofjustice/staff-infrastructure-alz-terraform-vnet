@@ -50,7 +50,7 @@ stages:
       workingDirectory: "$(System.DefaultWorkingDirectory)/staff-infrastructure-alz-terraform-vnet/tests/alz-vnet/"
       yamlenv: "pr_exclusivelock"
       applyTfChanges: true
-      terraformVersion: "1.5.7"
+      terraformVersion: "1.9.8"
 
   # Note that working dirs in this stage are different as they don't checkout the CI templates repo.
   - stage: Test
@@ -91,4 +91,4 @@ stages:
       yamlenv: $(destoryyamlenv) # "pr_exclusivelock" - find a way to pass both these yaml env
       applyTfChanges: true
       dependsOn: [test]
-      terraformVersion: "1.5.7"
+      terraformVersion: "1.9.8"
