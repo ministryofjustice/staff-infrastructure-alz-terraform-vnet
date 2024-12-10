@@ -8,7 +8,7 @@ pr:
   paths:
     include:
       - modules/alz-vnet/
-      - tests/alz-vnet.yml
+      - tests/*
 
 resources:
   repositories:
